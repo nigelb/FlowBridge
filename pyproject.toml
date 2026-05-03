@@ -22,6 +22,9 @@ dependencies = [
     "pymodbus-waveshare-relay @ git+https://github.com/nigelb/pymodbus-waveshare-relay.git"
 ]
 
+[project.scripts]
+flow-bridge = "flow_bridge.cli.main:main"
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
