@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flow-bridge"
+version = "0.1.0"
+description = "Dispatchs irrigation controller events to external hardware."
+authors = [{ name = "NigelB" }]
+requires-python = ">=3.10"
+readme = "README.md"
+license = "GPL-3.0-only"
+license-files = [
+    "LICENSE",
+]
+dependencies = [
+    "paho-mqtt",
+    "pyYAML",
+    "pymodbus",
+    "pyserial",
+    "ArgumentParserUtils @ git+https://github.com/nigelb/ArgumentParserUtils.git",
+    "pymodbus-waveshare-relay @ git+https://github.com/nigelb/pymodbus-waveshare-relay.git"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 100
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
